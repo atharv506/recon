@@ -1,0 +1,99 @@
+.compare-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.compare-image {
+  position: relative;
+  overflow: hidden;
+  background: #eee;
+  min-width: 0;
+}
+
+.compare-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.compare-label {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  left: 12px;
+  padding: 6px 9px;
+  background: #111;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.compare-label.current {
+  background: #f04432;
+}
+
+.version-history {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.version-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+}
+
+.version-card:hover {
+  border-color: #111;
+}
+
+.version-card.active {
+  border: 2px solid #f04432;
+}
+
+.version-thumb {
+  width: 58px;
+  height: 70px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #eee;
+}
+
+.version-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.version-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.version-info strong {
+  font-size: 12px;
+}
+
+.version-info span {
+  font-size: 11px;
+  color: #777;
+}
+
+@media (max-width: 800px) {
+  .compare-view {
+    grid-template-columns: 1fr;
+  }
+}
